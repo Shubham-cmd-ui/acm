@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+.env
+
+# Django database & media
+*.sqlite3
+db.sqlite3-journal
+media/documents/*
+!media/documents/.gitkeep
+media/indices/*
+!media/indices/.gitkeep
+
+# Static collected
+staticfiles/
+
+# IDE files
+.vscode/
+.idea/
+*.swp

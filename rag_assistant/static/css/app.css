@@ -1,0 +1,1122 @@
+/* =========================================================================
+   SkyLearn Design System
+   Source: skylearn-DESIGN.md
+   Aesthetic: Warmly bright, generous white surfaces, softly rounded corners,
+   accessible dyslexia-friendly typography (Atkinson Hyperlegible),
+   sky-blue brand anchor, sun-yellow achievements, and leaf-green progress.
+   ========================================================================= */
+
+:root {
+    /* Brand Sky Palette */
+    --color-sky: #3B82F6;
+    --color-sky-bright: #60A5FA;
+    --color-sky-deep: #1D4ED8;
+    --color-sky-soft: #DBEAFE;
+    
+    /* Sun Achievement & Reward Palette */
+    --color-sun: #FBBF24;
+    --color-sun-bright: #FCD34D;
+    --color-sun-deep: #D97706;
+    --color-sun-soft: #FEF3C7;
+
+    /* Leaf Progress & Correct Answer Palette */
+    --color-leaf: #22C55E;
+    --color-leaf-bright: #4ADE80;
+    --color-leaf-deep: #16A34A;
+    --color-leaf-soft: #DCFCE7;
+
+    /* Gentle Coral "Let's try again" (Never harsh red) */
+    --color-coral: #F87171;
+    --color-coral-deep: #DC2626;
+    --color-coral-soft: #FEE2E2;
+
+    /* Berry Secondary / Bonus / "Go Further" Palette */
+    --color-berry: #A855F7;
+    --color-berry-deep: #7E22CE;
+    --color-berry-soft: #F3E8FF;
+
+    /* Surfaces */
+    --color-background: #FFFFFF;
+    --color-surface: #F8FAFC;
+    --color-surface-elevated: #FFFFFF;
+    --color-surface-sunken: #F1F5F9;
+
+    /* Typography Inks */
+    --color-ink: #0F172A;
+    --color-ink-muted: #475569;
+    --color-ink-subtle: #94A3B8;
+    --color-ink-faint: #CBD5E1;
+
+    /* Outlines & Focus */
+    --color-outline: #E2E8F0;
+    --color-outline-strong: #94A3B8;
+
+    /* Radii */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-btn: 16px;
+    --radius-card: 20px;
+    --radius-panel: 28px;
+    --radius-pill: 999px;
+
+    /* Shadows */
+    --shadow-card: 0 4px 14px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.05);
+    --shadow-card-hover: 0 10px 24px rgba(15, 23, 42, 0.08), 0 3px 6px rgba(15, 23, 42, 0.04);
+    --shadow-active: 0 12px 32px rgba(59, 130, 246, 0.16);
+    --shadow-sun-glow: 0 0 24px rgba(252, 211, 77, 0.45);
+    --shadow-modal: 0 24px 48px rgba(15, 23, 42, 0.12);
+
+    /* Typography Families */
+    --font-body: 'Atkinson Hyperlegible', Nunito Sans, -apple-system, sans-serif;
+    --font-display: 'Nunito', Quicksand, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Base Body Setup */
+body.skylearn-body {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    letter-spacing: 0.01em;
+    color: var(--color-ink);
+    background-color: #F8FAFC;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+.display-title, .skylearn-brand-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-ink);
+    letter-spacing: -0.01em;
+}
+
+/* Utility Color Helpers */
+.text-sky { color: var(--color-sky) !important; }
+.text-sky-deep { color: var(--color-sky-deep) !important; }
+.text-sun { color: var(--color-sun) !important; }
+.text-sun-deep { color: var(--color-sun-deep) !important; }
+.text-leaf { color: var(--color-leaf) !important; }
+.text-leaf-deep { color: var(--color-leaf-deep) !important; }
+.text-coral { color: var(--color-coral) !important; }
+.text-coral-deep { color: var(--color-coral-deep) !important; }
+.text-berry { color: var(--color-berry) !important; }
+.text-ink { color: var(--color-ink) !important; }
+.text-ink-muted { color: var(--color-ink-muted) !important; }
+
+.bg-sky-soft { background-color: var(--color-sky-soft) !important; }
+.bg-sun-soft { background-color: var(--color-sun-soft) !important; }
+.bg-leaf-soft { background-color: var(--color-leaf-soft) !important; }
+.bg-coral-soft { background-color: var(--color-coral-soft) !important; }
+.bg-berry-soft { background-color: var(--color-berry-soft) !important; }
+.bg-surface { background-color: var(--color-surface) !important; }
+.bg-surface-sunken { background-color: var(--color-surface-sunken) !important; }
+
+/* =========================================================================
+   1. SkyLearn Top Navigation Bar
+   ========================================================================= */
+.skylearn-navbar {
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-outline);
+    padding: 0.75rem 0;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03);
+    z-index: 1030;
+}
+
+.skylearn-logo-badge {
+    width: 44px;
+    height: 44px;
+    background: var(--color-sky-soft);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.12);
+    transition: transform 0.2s ease;
+}
+
+.skylearn-logo-badge:hover {
+    transform: rotate(-6deg) scale(1.05);
+}
+
+.skylearn-brand-title {
+    font-size: 1.45rem;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.skylearn-brand-subtitle {
+    font-size: 0.76rem;
+    color: var(--color-ink-muted);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* Streak Pill */
+.streak-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: var(--color-sun-soft);
+    border: 1px solid #FDE68A;
+    border-radius: var(--radius-pill);
+    padding: 0.35rem 0.85rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--color-sun-deep);
+    box-shadow: 0 1px 4px rgba(251, 191, 36, 0.15);
+    cursor: default;
+    user-select: none;
+}
+
+.streak-count {
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+}
+
+/* Mode Switcher Pill (Student vs Teacher/Parent) */
+.mode-switcher-pill {
+    background: var(--color-surface-sunken);
+    border: 1px solid var(--color-outline);
+    border-radius: var(--radius-pill);
+    padding: 3px;
+    gap: 3px;
+}
+
+.mode-option {
+    border: none;
+    background: transparent;
+    padding: 0.35rem 0.85rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-ink-muted);
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.mode-option:hover {
+    color: var(--color-ink);
+}
+
+.mode-option.active {
+    background: var(--color-background);
+    color: var(--color-sky-deep);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+/* Quick Tool Buttons */
+.btn-skylearn-tool {
+    background: var(--color-surface);
+    border: 1px solid var(--color-outline);
+    border-radius: var(--radius-pill);
+    padding: 0.35rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-ink-muted);
+    transition: all 0.2s ease;
+}
+
+.btn-skylearn-tool:hover, .btn-skylearn-tool.active {
+    background: var(--color-sky-soft);
+    border-color: var(--color-sky-bright);
+    color: var(--color-sky-deep);
+}
+
+/* =========================================================================
+   2. Cards & Containers (20px Radius & Soft Elevation)
+   ========================================================================= */
+.card, .skylearn-card {
+    border-radius: var(--radius-card) !important;
+    border: 1px solid var(--color-outline) !important;
+    background-color: var(--color-background);
+    box-shadow: var(--shadow-card);
+    transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 240ms ease;
+}
+
+.card:hover, .skylearn-card:hover {
+    box-shadow: var(--shadow-card-hover);
+}
+
+.card-header {
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-outline);
+    padding: 1rem 1.25rem;
+}
+
+/* Inset Sunken Drop Zone / Well */
+.upload-dropzone {
+    background-color: var(--color-surface);
+    border: 2px dashed var(--color-outline-strong);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    text-align: center;
+    transition: all 240ms ease;
+}
+
+.upload-dropzone:hover, .upload-dropzone.dragover {
+    border-color: var(--color-sky);
+    background-color: var(--color-sky-soft);
+}
+
+/* =========================================================================
+   3. The Big Friendly Button (Primary & Secondary Actions)
+   ========================================================================= */
+.btn-skylearn-primary, .btn-primary {
+    background-color: var(--color-sky) !important;
+    border: none !important;
+    border-bottom: 3px solid var(--color-sky-deep) !important;
+    color: #ffffff !important;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-radius: var(--radius-btn) !important;
+    min-height: 54px;
+    padding: 0.75rem 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+    transition: all 180ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.btn-skylearn-primary:hover, .btn-primary:hover {
+    background-color: var(--color-sky-deep) !important;
+    border-bottom-color: #1e3a8a !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35);
+}
+
+.btn-skylearn-primary:active, .btn-primary:active {
+    transform: scale(0.97) translateY(1px);
+    border-bottom-width: 1px !important;
+}
+
+/* Leaf Action Button (Keep Going / Submit / Success) */
+.btn-skylearn-leaf {
+    background-color: var(--color-leaf) !important;
+    border: none !important;
+    border-bottom: 3px solid var(--color-leaf-deep) !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    border-radius: var(--radius-btn) !important;
+    min-height: 52px;
+    padding: 0.75rem 1.6rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.22);
+    transition: all 180ms ease;
+}
+
+.btn-skylearn-leaf:hover {
+    background-color: var(--color-leaf-deep) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(34, 197, 94, 0.32);
+}
+
+.btn-skylearn-leaf:active {
+    transform: scale(0.97);
+}
+
+/* Sun Action Button (Achievements / Practice Weak Topics) */
+.btn-skylearn-sun {
+    background-color: var(--color-sun) !important;
+    border: none !important;
+    border-bottom: 3px solid var(--color-sun-deep) !important;
+    color: var(--color-ink) !important;
+    font-weight: 700;
+    border-radius: var(--radius-btn) !important;
+    padding: 0.65rem 1.4rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 180ms ease;
+}
+
+.btn-skylearn-sun:hover {
+    background-color: var(--color-sun-deep) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* Gentle Coral Button (Practice & Review) */
+.btn-skylearn-coral {
+    background-color: var(--color-coral) !important;
+    border: none !important;
+    border-bottom: 3px solid var(--color-coral-deep) !important;
+    color: #ffffff !important;
+    font-weight: 700;
+    border-radius: var(--radius-btn) !important;
+    padding: 0.6rem 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 180ms ease;
+}
+
+.btn-skylearn-coral:hover {
+    background-color: var(--color-coral-deep) !important;
+    transform: translateY(-2px);
+}
+
+/* Outline Sky Button */
+.btn-outline-skylearn {
+    background: transparent;
+    border: 2px solid var(--color-sky) !important;
+    color: var(--color-sky) !important;
+    font-weight: 700;
+    border-radius: var(--radius-btn) !important;
+    padding: 0.65rem 1.4rem;
+    transition: all 180ms ease;
+}
+
+.btn-outline-skylearn:hover {
+    background: var(--color-sky-soft) !important;
+    color: var(--color-sky-deep) !important;
+    border-color: var(--color-sky-deep) !important;
+}
+
+/* =========================================================================
+   4. Lesson Cards (Dashboard Library)
+   ========================================================================= */
+.lesson-card, .document-item {
+    border-radius: var(--radius-card) !important;
+    border: 1px solid var(--color-outline) !important;
+    background-color: var(--color-surface);
+    padding: 1rem 1.15rem;
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    transition: all 240ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.lesson-card:hover, .document-item:hover {
+    transform: translateY(-3px);
+    background-color: #ffffff;
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--color-sky-bright) !important;
+}
+
+/* Active Lesson Card: 3px Sky border with soft glow */
+.lesson-card.active-doc, .document-item.active-doc {
+    background-color: #ffffff !important;
+    border: 3px solid var(--color-sky) !important;
+    box-shadow: var(--shadow-active) !important;
+}
+
+.lesson-icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+/* Progress Strip (8px tall, 999px radius, leaf fill on sky-soft track) */
+.progress-strip, .progress {
+    height: 8px !important;
+    border-radius: var(--radius-pill) !important;
+    background-color: var(--color-sky-soft) !important;
+    overflow: hidden;
+}
+
+.progress-strip-fill, .progress-bar {
+    background-color: var(--color-leaf) !important;
+    border-radius: var(--radius-pill) !important;
+    transition: width 480ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* =========================================================================
+   5. Interactive Navigation Tabs
+   ========================================================================= */
+.skylearn-tabs.nav-tabs {
+    border-bottom: 2px solid var(--color-outline);
+    gap: 0.5rem;
+}
+
+.skylearn-tabs .nav-link {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-ink-muted);
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px 12px 0 0;
+    transition: all 200ms ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skylearn-tabs .nav-link:hover {
+    color: var(--color-sky-deep);
+    background-color: var(--color-sky-soft);
+    border-bottom-color: var(--color-sky-bright);
+}
+
+.skylearn-tabs .nav-link.active {
+    color: var(--color-sky-deep) !important;
+    border-bottom: 3px solid var(--color-sky) !important;
+    background-color: transparent !important;
+}
+
+/* =========================================================================
+   6. Chatbot Q&A (Tutor Persona & Bubbles)
+   ========================================================================= */
+.chat-welcome-banner {
+    background: linear-gradient(135deg, #EFF6FF 0%, #FFFFFF 100%);
+    border: 2px solid var(--color-sky-soft);
+    border-radius: var(--radius-card);
+    padding: 2.25rem 1.5rem;
+}
+
+.skylearn-mascot-avatar {
+    width: 68px;
+    height: 68px;
+    border-radius: var(--radius-pill);
+    background: var(--color-sky);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border: 3px solid #ffffff;
+    outline: 3px solid var(--color-sky-soft);
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);
+}
+
+.chat-msg {
+    margin-bottom: 1.75rem;
+    animation: skylearnSlideUp 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes skylearnSlideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* User Message Bubble */
+.user-bubble {
+    background: linear-gradient(135deg, var(--color-sky) 0%, var(--color-sky-deep) 100%);
+    color: #ffffff;
+    border-radius: 20px 20px 4px 20px;
+    padding: 1rem 1.35rem;
+    max-width: 80%;
+    margin-left: auto;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.2);
+    word-break: break-word;
+}
+
+/* AI Message Bubble */
+.ai-bubble-container {
+    max-width: 90%;
+    margin-right: auto;
+}
+
+.ai-bubble {
+    background-color: var(--color-surface-elevated);
+    border: 1px solid var(--color-outline);
+    border-radius: 4px 20px 20px 20px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-card);
+    position: relative;
+}
+
+.ai-bubble.grounded-success {
+    border-left: 5px solid var(--color-leaf) !important;
+}
+
+.ai-bubble.general-knowledge-mode {
+    border-left: 5px solid var(--color-berry) !important;
+    background-color: #FAF5FF;
+}
+
+.ai-bubble.fallback-warning {
+    border-left: 5px solid var(--color-sun) !important;
+    background-color: #FFFDF5;
+}
+
+.answer-content {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-ink);
+    word-break: break-word;
+}
+
+/* Headings in AI Responses */
+.answer-content h1, .answer-content h2, .answer-content h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-ink);
+    margin-top: 1.25rem;
+    margin-bottom: 0.6rem;
+    border-bottom: 2px solid var(--color-outline);
+    padding-bottom: 0.35rem;
+}
+
+.answer-content h4 {
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--color-sky-deep);
+    margin-top: 1rem;
+    margin-bottom: 0.45rem;
+}
+
+.answer-content h5, .answer-content h6 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-top: 0.85rem;
+    margin-bottom: 0.35rem;
+}
+
+/* Paragraphs & Lists */
+.answer-content p {
+    margin-bottom: 0.85rem;
+    line-height: 1.75;
+}
+
+.answer-content p:last-child {
+    margin-bottom: 0;
+}
+
+.answer-content ul, .answer-content ol {
+    margin-bottom: 0.95rem;
+    padding-left: 1.45rem;
+}
+
+.answer-content li {
+    margin-bottom: 0.4rem;
+    line-height: 1.68;
+}
+
+/* Responsive GFM Markdown Tables */
+.skylearn-md-table-wrapper {
+    overflow-x: auto;
+    margin: 1.15rem 0;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-outline);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.skylearn-md-table {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.skylearn-md-table th {
+    background: var(--color-sky-soft);
+    color: var(--color-sky-deep);
+    font-weight: 800;
+    padding: 0.65rem 0.95rem;
+    border-bottom: 2px solid var(--color-sky-bright);
+    text-align: left;
+}
+
+.skylearn-md-table td {
+    padding: 0.65rem 0.95rem;
+    border-bottom: 1px solid var(--color-outline);
+    color: var(--color-ink);
+}
+
+.skylearn-md-table tr:nth-child(even) td {
+    background-color: #fafcff;
+}
+
+.skylearn-md-table tr:hover td {
+    background-color: #f0f7ff;
+}
+
+/* Fenced Code Blocks with Language Header & Copy Action */
+.code-block-wrapper {
+    margin: 1.15rem 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid #334155;
+    background: #0f172a;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
+}
+
+.code-block-header {
+    background: #1e293b;
+    padding: 0.4rem 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+}
+
+.code-lang-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-copy-code {
+    background: transparent;
+    border: 1px solid #475569;
+    color: #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    cursor: pointer;
+    transition: all 160ms ease;
+}
+
+.btn-copy-code:hover {
+    background: #334155;
+    color: #ffffff;
+    border-color: #64748b;
+}
+
+.code-block-wrapper pre {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    overflow-x: auto;
+    background: transparent;
+}
+
+.code-block-wrapper code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #f8fafc;
+}
+
+/* Inline Code Badges */
+.answer-content :not(pre) > code, .skylearn-inline-code {
+    font-family: 'JetBrains Mono', monospace;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #0f766e;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    font-size: 0.88em;
+    font-weight: 600;
+}
+
+/* Blockquotes & Callout Notes */
+.answer-content blockquote {
+    border-left: 4px solid var(--color-sky);
+    background: rgba(56, 189, 248, 0.08);
+    margin: 1rem 0;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    color: var(--color-ink);
+}
+
+.answer-content blockquote p {
+    margin-bottom: 0;
+}
+
+/* One-Click Copy Response Action */
+.btn-copy-response {
+    background: var(--color-surface);
+    border: 1px solid var(--color-outline);
+    color: var(--color-ink-muted);
+    border-radius: var(--radius-pill);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all 180ms ease;
+    cursor: pointer;
+}
+
+.btn-copy-response:hover {
+    background: #ffffff;
+    color: var(--color-sky-deep);
+    border-color: var(--color-sky-bright);
+    transform: scale(1.04);
+}
+
+/* Audio "Read to Me" Button */
+.btn-read-to-me {
+    background: var(--color-sky-soft);
+    border: 1px solid var(--color-sky-bright);
+    color: var(--color-sky-deep);
+    border-radius: var(--radius-pill);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: all 180ms ease;
+    cursor: pointer;
+}
+
+.btn-read-to-me:hover, .btn-read-to-me.speaking {
+    background: var(--color-sky);
+    color: #ffffff;
+    transform: scale(1.04);
+}
+
+/* Source Reference Passages */
+.source-references-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-outline);
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.source-header-btn {
+    background: var(--color-surface);
+    border: none;
+    width: 100%;
+    padding: 0.65rem 1rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--color-ink-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.source-header-btn:hover {
+    color: var(--color-sky-deep);
+}
+
+.passage-item {
+    background: #ffffff;
+    border: 1px solid var(--color-outline);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 0.9rem;
+    margin-bottom: 0.6rem;
+}
+
+.passage-text {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--color-ink-muted);
+}
+
+/* =========================================================================
+   7. Answer Tiles (Quizzes & Multiple-Choice Questions)
+   ========================================================================= */
+.quiz-question-card {
+    background: var(--color-surface-elevated);
+    border: 1px solid var(--color-outline);
+    border-radius: var(--radius-card);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-card);
+}
+
+.quiz-option-label {
+    min-height: 60px;
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-outline);
+    border-radius: var(--radius-btn);
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--color-ink);
+    cursor: pointer;
+    transition: all 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    user-select: none;
+}
+
+.quiz-option-label:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-sky-bright);
+    background-color: var(--color-sky-soft);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.12);
+}
+
+.quiz-option-label.selected {
+    border-color: var(--color-sky);
+    background-color: var(--color-sky-soft);
+    color: var(--color-sky-deep);
+    font-weight: 700;
+}
+
+/* Correct Answer Tile: Leaf Border + Leaf-Soft Fill + Checkmark */
+.quiz-option-label.is-correct {
+    border-color: var(--color-leaf) !important;
+    background-color: var(--color-leaf-soft) !important;
+    color: var(--color-leaf-deep) !important;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.18);
+}
+
+/* Incorrect Answer Tile: Gentle Coral Border + Coral-Soft Fill (No harsh red!) */
+.quiz-option-label.is-incorrect {
+    border-color: var(--color-coral) !important;
+    background-color: var(--color-coral-soft) !important;
+    color: var(--color-coral-deep) !important;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(248, 113, 113, 0.18);
+}
+
+.quiz-explanation-box {
+    background: var(--color-surface);
+    border-left: 4px solid var(--color-sky);
+    border-radius: var(--radius-sm);
+    padding: 0.9rem 1.15rem;
+}
+
+/* =========================================================================
+   8. Quiz Score Card & Star Achievements
+   ========================================================================= */
+.quiz-score-number {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--color-sky-deep);
+}
+
+.star-rating-row {
+    display: inline-flex;
+    gap: 0.5rem;
+}
+
+.star-icon {
+    font-size: 2.2rem;
+    color: var(--color-sun);
+    filter: drop-shadow(0 2px 8px rgba(251, 191, 36, 0.4));
+    animation: starScaleIn 480ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.star-icon.dimmed {
+    color: var(--color-outline-strong);
+    filter: none;
+    opacity: 0.4;
+}
+
+@keyframes starScaleIn {
+    0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+    70% { transform: scale(1.25) rotate(10deg); }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Weak Topics Diagnostic Cards */
+.weak-topic-alert-card {
+    border-left: 5px solid var(--color-coral) !important;
+    background-color: #FFF5F5 !important;
+}
+
+.weak-topic-item {
+    background: #ffffff;
+    border: 1px solid #FECACA;
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.topic-score-row {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-outline);
+    border-radius: var(--radius-md);
+    padding: 0.85rem 1.1rem;
+    margin-bottom: 0.65rem;
+}
+
+/* =========================================================================
+   9. 3D Flashcard Deck
+   ========================================================================= */
+.flashcard-wrapper {
+    perspective: 1200px;
+    height: 320px;
+    user-select: none;
+}
+
+.flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flashcard-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: var(--radius-card);
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow-card);
+}
+
+.flashcard-front {
+    background: #ffffff;
+    border: 2px solid var(--color-outline);
+}
+
+.flashcard-back {
+    background: linear-gradient(135deg, #F0FDF4 0%, #FFFFFF 100%);
+    border: 2px solid var(--color-leaf-bright);
+    transform: rotateY(180deg);
+}
+
+/* =========================================================================
+   10. Short Notes & Key Takeaways
+   ========================================================================= */
+.note-takeaway-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+}
+
+.glossary-item-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-outline);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    height: 100%;
+}
+
+/* =========================================================================
+   11. Tag Pills & Badge Vocabulary
+   ========================================================================= */
+.tag-pill, .badge {
+    border-radius: var(--radius-pill);
+    font-family: var(--font-body);
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+}
+
+.tag-easy {
+    background: var(--color-leaf-soft);
+    color: var(--color-leaf-deep);
+    border: 1px solid #BBF7D0;
+}
+
+.tag-medium {
+    background: var(--color-sun-soft);
+    color: var(--color-sun-deep);
+    border: 1px solid #FDE68A;
+}
+
+.tag-hard {
+    background: var(--color-berry-soft);
+    color: var(--color-berry-deep);
+    border: 1px solid #E9D5FF;
+}
+
+/* =========================================================================
+   12. Accessibility Overlays & Tools
+   ========================================================================= */
+/* Reading Ruler (Translucent sky bar following the current reading line) */
+.skylearn-reading-ruler {
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    height: 38px;
+    background: rgba(59, 130, 246, 0.16);
+    border-top: 2px solid rgba(59, 130, 246, 0.5);
+    border-bottom: 2px solid rgba(59, 130, 246, 0.5);
+    pointer-events: none;
+    z-index: 9999;
+    box-shadow: 0 0 16px rgba(59, 130, 246, 0.2);
+    transition: top 60ms ease-out;
+}
+
+/* Confetti Celebration Canvas */
+.skylearn-confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 10000;
+}
+
+/* High Contrast Mode */
+body.high-contrast {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+}
+
+body.high-contrast .card,
+body.high-contrast .lesson-card,
+body.high-contrast .ai-bubble,
+body.high-contrast .quiz-option-label {
+    background-color: #FFFFFF !important;
+    border: 2px solid #000000 !important;
+    box-shadow: none !important;
+    color: #000000 !important;
+}
+
+body.high-contrast .btn-skylearn-primary {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    border: 2px solid #000000 !important;
+}
+
+/* Reduced Motion Mode Support */
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .skylearn-confetti-canvas {
+        display: none !important;
+    }
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #CBD5E1;
+    border-radius: var(--radius-pill);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #94A3B8;
+}
