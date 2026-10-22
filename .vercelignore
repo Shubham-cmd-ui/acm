@@ -1,0 +1,22 @@
+# Version control & environments
+.git
+.gitignore
+.env
+.env.local
+.env.*.local
+venv
+env
+ENV
+
+# Python artifacts
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache
+
+# Database & local media
+*.sqlite3
+db.sqlite3
+media/
+.gemini/
