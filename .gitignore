@@ -21,9 +21,6 @@ media/documents/*
 media/indices/*
 !media/indices/.gitkeep
 
-# Static collected
-staticfiles/
-
 # IDE files
 .vscode/
 .idea/

@@ -1,6 +1,4 @@
-# Version control & environments
-.git
-.gitignore
+# Environments
 .env
 .env.local
 .env.*.local

@@ -13,3 +13,5 @@ if str(BASE_DIR) not in sys.path:
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'doc_intel_rag.settings')
 
 from doc_intel_rag.wsgi import application, app
+
+handler = app
